@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
 
-const BMICalculator = () => {
+const BMICalculator = forwardRef((props, ref) => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('male');
   const [bmi, setBMI] = useState(null);
   const [category, setCategory] = useState('');
+
+  useImperativeHandle(ref, () => ({
+    handleReset() {
+      setWeight('');
+      setHeight('');
+      setAge('');
+      setGender('male');
+      setBMI(null);
+      setCategory('');
+    }
+  }));
 
   const handleCalculate = () => {
     if (weight && height && age) {
@@ -15,15 +26,6 @@ const BMICalculator = () => {
       setBMI(bmiValue.toFixed(2));
       setCategory(getBMICategory(bmiValue));
     }
-  };
-
-  const handleReset = () => {
-    setWeight('');
-    setHeight('');
-    setAge('');
-    setGender('male');
-    setBMI(null);
-    setCategory('');
   };
 
   const getBMICategory = (bmi) => {
@@ -88,6 +90,6 @@ const BMICalculator = () => {
       )}
     </div>
   );
-};
+});
 
 export default BMICalculator;
