@@ -13,12 +13,12 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-between">
-      <Header onReset={handleReset} />
-      <main className="p-4 flex-grow">
+    <div className="min-h-screen bg-white flex flex-col justify-between">
+      <Header onReset={handleReset} className="bg-black text-white" />
+      <main className="p-4 flex-grow bg-white text-black">
         <BMICalculator ref={bmiCalculatorRef} />
       </main>
-      <Footer />
+      <Footer className="bg-black text-white" />
     </div>
   );
 };

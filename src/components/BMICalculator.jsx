@@ -36,39 +36,39 @@ const BMICalculator = forwardRef((props, ref) => {
   };
 
   return (
-    <div className="bg-secondary p-6 rounded shadow-md w-full max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-semibold mb-4 text-primary">Kitle İndeksi Hesapla</h2>
+    <div className="bg-white p-6 rounded shadow-md w-full max-w-md mx-auto mt-8">
+      <h2 className="text-2xl font-semibold mb-4 text-black">Kitle İndeksi Hesapla</h2>
       <div className="mb-4">
-        <label className="block text-accent">Boy (cm):</label>
+        <label className="block text-black">Boy (cm):</label>
         <input
           type="number"
-          className="w-full p-2 border border-gray-300 rounded mt-1"
+          className="w-full p-2 border border-gray-300 rounded mt-1 text-black"
           value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
       <div className="mb-4">
-        <label className="block text-accent">Kilo (kg):</label>
+        <label className="block text-black">Kilo (kg):</label>
         <input
           type="number"
-          className="w-full p-2 border border-gray-300 rounded mt-1"
+          className="w-full p-2 border border-gray-300 rounded mt-1 text-black"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
       </div>
       <div className="mb-4">
-        <label className="block text-accent">Yaş:</label>
+        <label className="block text-black">Yaş:</label>
         <input
           type="number"
-          className="w-full p-2 border border-gray-300 rounded mt-1"
+          className="w-full p-2 border border-gray-300 rounded mt-1 text-black"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
       </div>
       <div className="mb-4">
-        <label className="block text-accent">Cinsiyet:</label>
+        <label className="block text-black">Cinsiyet:</label>
         <select
-          className="w-full p-2 border border-gray-300 rounded mt-1"
+          className="w-full p-2 border border-gray-300 rounded mt-1 text-black"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -77,15 +77,15 @@ const BMICalculator = forwardRef((props, ref) => {
         </select>
       </div>
       <button
-        className="bg-primary text-secondary py-2 px-4 rounded w-full"
+        className="bg-black text-white py-2 px-4 rounded w-full"
         onClick={handleCalculate}
       >
         Hesapla
       </button>
       {bmi && (
         <div className="mt-4 text-center">
-          <h3 className="text-xl text-primary">Vücut Kitle İndeksi: {bmi}</h3>
-          <p className="text-lg text-accent">Kategori: {category}</p>
+          <h3 className="text-xl text-black">Vücut Kitle İndeksi: {bmi}</h3>
+          <p className="text-lg text-black">Kategori: {category}</p>
         </div>
       )}
     </div>
